@@ -9,18 +9,18 @@ namespace TestNinja.Mocking
 {
     public class VideoService
     {
-        public IFileReader FileReader { get; set; }
+        private IFileReader _fileReader;
 
-        public VideoService()
+        public VideoService(IFileReader fileReader = null) //to use with fakefilereader
         {
-            FileReader = new FileReader();
+            _fileReader = fileReader ?? new FileReader(); //dependency injection by constructor
         }
         public string ReadVideoTitle() 
         {
             //Dependency Injection can be use by parameters, by properties or my constructors
 
             //var str = File.ReadAllText("video.txt");
-            var str = FileReader.Read("video.txt");
+            var str = _fileReader.Read("video.txt");
             var video = JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video.";
