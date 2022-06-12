@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestNinja.Mocking;
 
-namespace TestNinja.UnitTests.Mocking
+namespace TestNinja.UnitTests.Mock
 {
     [TestFixture]
     public class VideoServicesTests
