@@ -22,7 +22,7 @@ namespace TestNinja.UnitTests.Mocking
 
         [Test]
         public void GetPrice_GoldCostumer_Apply30PercentDiscount2() 
-            //Ex of Mock Abuse. Use mocks for remove external resources in the unit test
+            //Ex of a Mock Abuse. Use mocks for remove external resources in the unit test
         {
             var customer = new Mock<ICustomer>();
             customer.Setup(x => x.IsGold).Returns(true);
