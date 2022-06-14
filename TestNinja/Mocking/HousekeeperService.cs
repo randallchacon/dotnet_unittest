@@ -32,10 +32,11 @@ namespace TestNinja.Mocking
 
             foreach (var housekeeper in housekeepers)
             {
-                if (housekeeper.Email == null)
+               //if (housekeeper.Email == null)
+               if (String.IsNullOrWhiteSpace(housekeeper.Email))
                     continue;
 
-                var statementFilename = _statementeGenerator.SaveStatement(housekeeper.Oid, housekeeper.FullName, statementDate);
+               var statementFilename = _statementeGenerator.SaveStatement(housekeeper.Oid, housekeeper.FullName, statementDate);
 
                 if (string.IsNullOrWhiteSpace(statementFilename))
                     continue;
